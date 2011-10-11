@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 def link_links
 end
 
