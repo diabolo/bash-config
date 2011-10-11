@@ -5,7 +5,7 @@ end
 
 def backup_old_config
   `echo "Backing up old config"`
-  `mkdir ~/bash_old_config`
+  `mkdir ~/.bash_old_config`
   `mv ~/.bashrc ~/.bash_old_config/bashrc`
 end
 
