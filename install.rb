@@ -1,6 +1,13 @@
 #!/usr/bin/env ruby
 
 def link_links
+  puts `echo "Sym linking ..."`
+  puts  `pwd`
+  targets = Dir.new("~/.bash/plugins").entries
+  targets.each do |target|
+    puts target.inspect
+    FileUtils.symlink(src, dest) 
+  end
 end
 
 def backup_old_config
@@ -10,9 +17,10 @@ def backup_old_config
 end
 
 def write_config
+  `echo "Writing new config"`
 end
 
 
-backup_old_config
-write_config
+# backup_old_config
 link_links
+write_config
