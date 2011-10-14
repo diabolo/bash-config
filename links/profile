@@ -1,0 +1,21 @@
+set -o notify
+export HISTCONTROL=ignoredups
+
+source ~/.git-completion.bash
+source ~/.aliases
+
+# usage 'gitrm'
+# info: stages files that need deleting
+function gitrm() { git status | grep deleted | awk '{print$3}' | xargs git rm;}
+
+export EDITOR=vim
+
+# PROMPT
+export PS1='\u@\h:\w/$ '
+if [ -f ~/.prompt ]; then
+source ~/.prompt
+fi
+
+# Home bin
+if [ -d "${HOME}/bin" ] ; then PATH=${HOME}/bin:$PATH; fi
+
